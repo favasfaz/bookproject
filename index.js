@@ -19,6 +19,9 @@ app.use(bodyParser.json());
 //api
 app.use("/api/books", verifyToken, bookRouter);
 app.use("/api/users", userRouter);
+app.use('/',(req,res)=>{
+  res.send('success')
+})
 
 //error middleware
 app.use((err, req, res, next) => {
